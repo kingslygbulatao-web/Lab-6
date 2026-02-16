@@ -9,12 +9,10 @@ double SumArray(const double*arr, int size);
 int main() {
 
     double* myArray = new double[SIZE];
-    myArray = nullptr;
 
     double*myarray = new double[SIZE];
     std::cout << "Data Entry for this array" << std::endl;
    
-    std::cout << "> Element #" << ":" << std::endl; 
     EnterArrayData(myArray, SIZE);
    
     std::cout << "Outputting array elements: " << std::endl;
@@ -23,12 +21,17 @@ int main() {
 
      std::cout << "Sum of Values: " << total << std::endl;
      
-     delete[] myArray;
+    
+    delete [] myArray
+    myArray = nullptr;
 
     return 0;
 }
 
 void EnterArrayData(double* arr, int size){
+    for (int i = 0; i < size; i++){
+        std::cout << "> Element #" << i << ": " << std::endl;
+    }
     for(int i = 0; i < size; i++){
         std::cin >>  *(arr + i);
     }
@@ -45,6 +48,5 @@ double SumArray(const double* arr, int size){
     for(int i = 0; i < size; i++){
         sum += *(arr + i);
     }
-
+    return sum;
 }
-
