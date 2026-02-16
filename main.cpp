@@ -15,8 +15,8 @@ int main() {
     EnterArrayData(myArray, SIZE);
 
    
-    std::cout << "Outputting array elements: " << std::endl;
-    
+    std::cout << "Outputting array elements: ";
+    OutputArrayData(myArray, SIZE);
 
     double total = SumArray(myArray, SIZE);
 
@@ -37,11 +37,10 @@ void EnterArrayData(double* arr, int size){
     std::cout << "data entry complete" << std::endl;
 }
 
-void OutputeData(const double* arr, int size) {
+void OutputArrayData(const double* arr, int size) {
     for (int i = 0; i < size; i++){
-        std::cout << *(arr+ i) << " " << std::endl;
+        std::cout << *(arr+ i) << " ";
     }
-    std::cout << std::endl;
 }
 
 double SumArray(const double* arr, int size){
