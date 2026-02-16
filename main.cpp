@@ -1,41 +1,42 @@
 #include <iostream>
-#include <ctime>
 
 const int SIZE = 5;
 
-int* EnterArrayData();
-int* OutputArrayData();
-int* Sumarry();
+void EnterArrayData(double* arr, int size);
+void OutputArrayData(const double* arr, int size);
+int* Sumarry(const double*arr, int size);
 
 int main() {
-    srand(time(0));
 
-    std::cout << "Data entry for this array: " << std::endl;
-    int *iptr = nullptr;
-    iptr = new int[SIZE];
+    double* myArray = new double[SIZE];
+    myArray = nullptr;
 
-    int total = EnterArrayData();
-    
-    for (int i = 0; i < SIZE; i++) // output array using pointers
-        std::cout << *(iptr + i) << " ";
-    std::cout << std::endl;
-    delete [] iptr;
+    double*myarray = new double[SIZE];
+    std::cout << "Data Entry for this array" << std::endl;
+   
+    std::cout << "> Element #" << ":" << std::endl; 
+    EnterArrayData(myArray, Size);
+   
+    std::cout << "Outputting array elements: " << std::endl;
+)   OutputArrayData(myArray, Size);
 
-    std::cout << "\nRETURNING POINTERS FROM FUNCTIONS\n\n";
-    int *myRands = nullptr;
-    myRands = getRandomArray();     // function returns a pointer to an array of randoms
-    for (int i = 0; i < SIZE; i++)  // output using array nomenclature
-        std::cout << myRands[i] << " ";
-    delete [] myRands;
+     std::cout << "Sum of Values: " << total << std::endl;
+     double total = sumArray(myArray, SIZE);
+
+     delete[] myArray;
 
     return 0;
 }
 
-int* EnterArrayData() {
-    int *arr = nullptr;
-    arr = new int[SIZE];
-    for (int i = 0; i < SIZE; i++)
-        arr[i] = rand() % (MAX-MIN+1) + MIN;
-    return arr;
+void EnterArrayData(double* arr, int size){
+    for(int i = 0; i < size; i++){
+        std::cin >>  *(arr + i);
+    }
+}
+
+void OutputeData(const double* arr, int size) {
+    for (int i = 0; i < size; i++){
+        std::cout
+    }
 }
 
