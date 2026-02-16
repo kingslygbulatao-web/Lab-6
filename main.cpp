@@ -4,7 +4,7 @@ const int SIZE = 5;
 
 void EnterArrayData(double* arr, int size);
 void OutputArrayData(const double* arr, int size);
-int* Sumarry(const double*arr, int size);
+double SumArray(const double*arr, int size);
 
 int main() {
 
@@ -15,14 +15,14 @@ int main() {
     std::cout << "Data Entry for this array" << std::endl;
    
     std::cout << "> Element #" << ":" << std::endl; 
-    EnterArrayData(myArray, Size);
+    EnterArrayData(myArray, SIZE);
    
     std::cout << "Outputting array elements: " << std::endl;
-)   OutputArrayData(myArray, Size);
+
+    double total = SumArray(myArray, SIZE);
 
      std::cout << "Sum of Values: " << total << std::endl;
-     double total = sumArray(myArray, SIZE);
-
+     
      delete[] myArray;
 
     return 0;
@@ -36,7 +36,15 @@ void EnterArrayData(double* arr, int size){
 
 void OutputeData(const double* arr, int size) {
     for (int i = 0; i < size; i++){
-        std::cout
+        std::cout << *(arr+ i) << " " << std::endl;
     }
+}
+
+double SumArray(const double* arr, int size){
+    double sum = 0;
+    for(int i = 0; i < size; i++){
+        sum += *(arr + i);
+    }
+
 }
 
